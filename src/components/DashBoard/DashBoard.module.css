@@ -1,0 +1,42 @@
+
+.dashboard_container {
+    display: grid;
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-areas: 
+        'nav featured_vid featured_vid'
+        'nav_list upcoming upcoming'
+        'nav_list now_playing now_playing'
+        '. popular_list popular_list'
+        '. top_rated top_rated'
+        
+    ;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.nav_list {
+    grid-area: nav_list;
+}
+
+.now_playing_list {
+    grid-area: now_playing;
+}
+
+.popular_list {
+    grid-area: popular_list;
+}
+
+.top_rated {
+    grid-area: top_rated;
+}
+
+.upcoming {
+    grid-area: upcoming;
+}
+
+.featured_vid {
+    grid-area: featured_vid;
+}

@@ -1,0 +1,48 @@
+
+
+
+.cards_container {
+    display: flex;
+    width: 95%;
+    height: 100%;
+    background: rgba(52, 52, 52, 0.3);
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+
+.now_title {
+    color: white;
+    font-family: 'Nothing You Could Do';
+    padding-bottom: 1px;
+    width: 10%;
+    padding-top: 30px;
+}
+
+.card {
+    /* padding-right: 30px; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card_img {
+    border-radius: 15px;
+}
+
+.slide_button {
+    background: rgba(52, 52, 52, 0.3);
+    font-size: 3rem;
+    /* padding-right: 30px; */
+    color: yellow;
+    border: none;
+}
+
+
+
+
+
