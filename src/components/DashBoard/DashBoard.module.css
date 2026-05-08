@@ -1,14 +1,15 @@
 
 .dashboard_container {
     display: grid;
-    grid-template-columns: 300px 1fr 1fr;
-    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 0 24px 0 0;
+    grid-template-columns: 170px 150px 1fr;
+    /* grid-template-rows: repeat(auto-fit, minmax(120px, auto)); */
     grid-template-areas: 
         'nav featured_vid featured_vid'
         'nav_list upcoming upcoming'
         'nav_list now_playing now_playing'
-        '. popular_list popular_list'
-        '. top_rated top_rated'
+        'nav_list popular_list popular_list'
+        'nav_list top_rated top_rated'
         
     ;
 }
@@ -39,4 +40,6 @@
 
 .featured_vid {
     grid-area: featured_vid;
+    max-height: 700px;
+    overflow: hidden;
 }

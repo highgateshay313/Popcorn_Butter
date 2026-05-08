@@ -1,22 +1,26 @@
 
 .featured_sec {
-    width: 97%;
+    flex: 1;
+    max-width: 100%;
     margin-top: 50px;
+    padding: 0 16px 0 30px;
 }
+
 
 .vid {
     border: none;
     border-radius: 15px;
-    width: 100%;
-    height: 700px;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    /* height: 100%; */
+    max-height: 700px;
 }
 
 .featured_movie {
     width: 100%;
-    height: 700px;
     position: relative;
     aspect-ratio: 16/9;
+    max-height: 700px;
 }

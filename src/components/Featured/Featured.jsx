@@ -27,13 +27,15 @@ export function Featured({featured}) {
                 <div>
 
                 </div>
-                <iframe className={styles.vid}
+                        <iframe className={styles.vid}
                 src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&loop=1&mute=0&rel=0&controls=0&playlist=${videoKey}`} 
                 width='100%'
-                height='700'
+                height='100%'
                 allowFullScreen
                 allow='autoplay'
                 />
+                
+            
             </div>
         </section>
     )

@@ -1,47 +1,83 @@
 
-
+.nowPlaying_container {
+    padding: 0 16px 0 30px;
+}
 
 .cards_container {
     display: flex;
-    width: 95%;
-    height: 100%;
+    width: 100%;
     background: rgba(52, 52, 52, 0.3);
     align-items: center;
-    justify-content: space-evenly;
-    padding: 30px 20px;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 20px 12px;
     margin-bottom: 30px;
     border-radius: 15px;
+    overflow: hidden;
 }
 
 .now_title {
     color: white;
     font-family: 'Nothing You Could Do';
-    padding-bottom: 1px;
-    width: 10%;
+    padding-bottom: 8px;
+    width: 100%;
     padding-top: 30px;
+    font-size: clamp(1.2rem, 4vw, 2rem);
 }
 
 .card {
     /* padding-right: 30px; */
-    height: 100%;
-    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
     justify-content: center;
     cursor: pointer;
 }
 
 .card_img {
+    width: 100%;
+    height: auto;
     border-radius: 15px;
+    object-fit: cover;
+    display: block;
 }
 
 .slide_button {
     background: rgba(52, 52, 52, 0.3);
     font-size: 3rem;
-    /* padding-right: 30px; */
     color: yellow;
     border: none;
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding: 4px;
 }
 
+@media (max-width: 768px) {
+    .card_img {
+        max-width: 110px;
+    }
+
+    .slide_button svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards_container {
+        gap: 4px;
+        padding: 12px 8px;
+    }
+
+    .card_img {
+        max-width: 70px;
+    }
+
+    .slide_button svg {
+        width: 20px;
+        height: 20px;
+    }
+}
 
 
 
