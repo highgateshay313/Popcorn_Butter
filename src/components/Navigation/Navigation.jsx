@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import styles from './Navigation.module.css';
-import Logo from '../../assets/movie_logo.jpg';
+import Logo from '../../assets/butter_popcorn.jpg';
 import '@fontsource/nothing-you-could-do';
 
 function Navigation({logo}) {

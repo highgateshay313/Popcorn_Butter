@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navigation from '../Navigation/Navigation';
 import styles from './DashBoard.module.css';
 import List from '../Navigation/List';
@@ -16,8 +16,15 @@ function DashBoard() {
     const [topRated, setTopRated] = useState([]);
     const [featuredMovie, setFeaturedMovie] = useState([]);
     const [loading, setLoading] = useState(null);
-  
+    const [modalOpen, setModalOpen] = useState(false);
+    const [featuredKey, setFeaturedKey] = useState(null);
 
+    const featuredRef = useRef(null)
+  
+    function handleMovieSelect(key) {
+        setFeaturedKey(key);
+        featuredRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
 
     const token = import.meta.env.VITE_TMBD_TOKEN;
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -67,19 +74,35 @@ function DashBoard() {
                 <List />
             </div>
                 <div className={styles.now_playing_list}>
-                    <NowPlaying title='Now Playing' movies={nowPlaying}/>
+                    <NowPlaying 
+                    title='Now Playing' 
+                    movies={nowPlaying}
+                    onMovieSelected={handleMovieSelect}
+                    />
                 </div>
                 <div className={styles.popular_list}>
-                     <NowPlaying title='Popular' movies={popular}/>
+                     <NowPlaying 
+                     title='Popular' 
+                     movies={popular}
+                     onMovieSelected={handleMovieSelect}
+                     />
                 </div>
                 <div className={styles.top_rated}>
-                    <NowPlaying title='Top Rated' movies={topRated} />
+                    <NowPlaying 
+                    title='Top Rated' 
+                    movies={topRated} 
+                    onMovieSelected={handleMovieSelect}
+                    />
                 </div>
                 <div className={styles.upcoming}>
-                    <NowPlaying title='Box Office' movies={upcoming} />
+                    <NowPlaying 
+                    title='Box Office' 
+                    movies={upcoming} 
+                    onMovieSelected={handleMovieSelect}
+                    />
                 </div>
-                <div className={styles.featured_vid}>
-                    <Featured featured={featuredMovie}/>
+                <div className={styles.featured_vid} ref={featuredRef}>
+                    <Featured featured={featuredMovie} featuredKey={featuredKey}/>
                 </div> 
         </section>
         

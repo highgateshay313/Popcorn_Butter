@@ -9,26 +9,23 @@ import '@fontsource/nothing-you-could-do';
 
 
 
-function NowPlaying({ title, movies = [], movieImage, }) {
+function NowPlaying({ title, movies = [], movieImage, onMovieSelected }) {
     console.log('Title:', title)
     const [startIndex, setStartIndex] = useState(0);
-    const [selectedKey, setSelectedKey] = useState(null)
-    const [modalOpen, setModalOpen] = useState(false)
-    
     const visableCards = 5;
 
     async function handleMovieClick(movieId) {
         const key = await fetchMovieVideos(movieId);
         if(key) {
-            setSelectedKey(key);
-            setModalOpen(true)
+            onMovieSelected?.(key);
         }
     }
 
-    function handleClose() {
-        setModalOpen(false);
-        setSelectedKey(null)
-    }
+    // function handleClose() {
+    //     // setModalOpen(false);
+    //     setSelectedKey(null);
+    //     onModalChange?.(false)
+    // }
   
 
     function handleNext() {
@@ -49,23 +46,7 @@ function NowPlaying({ title, movies = [], movieImage, }) {
     return (
         <section className={styles.nowPlaying_container}>
                 <h1 className={styles.now_title}>{title}</h1>
-            {modalOpen && (
-                <div className={styles.overlay} onClick={handleClose}>
-                    <div className={styles.modal} onClick={e => e.stopPropagation()}>
-                        <button onClick={handleClose} className={styles.close_button}>
-                            < IoMdCloseCircle size={20} color='#21130d'/>
-                        </button>
-                        <iframe 
-                            src={`https://www.youtube.com/embed/${selectedKey}?autoplay=1`}
-                            width='100%'
-                            height='100%'
-                            allowFullScreen
-                            allow='autoplay'
-                        />
-                    </div>
-                </div>
-            )}
-
+            
             <div className={styles.cards_container}>
                  <button className={styles.slide_button} onClick={handlePrev}>
                     <MdOutlineArrowBackIos size={40} color='#21130d'/>
