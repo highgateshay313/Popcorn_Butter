@@ -43,3 +43,9 @@
     max-height: 700px;
     overflow: hidden;
 }
+
+@media (max-width: 600px) {
+    .dashboard_container {
+        display: block;
+    }
+}
