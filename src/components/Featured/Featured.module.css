@@ -24,3 +24,28 @@
     aspect-ratio: 16/9;
     max-height: 700px;
 }
+
+@media (max-width: 600px) {
+    .featured_sec {
+        display: block;
+        padding: 0;
+        margin: 0;
+        max-width: 400px;
+        /* margin: 0 auto; */
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid red;
+    }
+
+    .featured_movie {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 16/9;
+    max-height: 700px;
+}
+
+.vid {
+    width: 100%;
+    margin: 0 auto;
+}
+}
